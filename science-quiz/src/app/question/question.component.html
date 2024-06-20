@@ -1,0 +1,10 @@
+<div>
+  <h2>{{currentQuestion.question}}</h2>
+  <ul>
+    <li *ngFor="let item of items">
+      <button (click)="answer(item)">{{item}}</button>
+    </li>
+  </ul>
+  <p>Tiempo restante: {{timeLeft}} segundos</p>
+</div>
+
