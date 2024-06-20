@@ -1,8 +1,9 @@
 <section>
-@if (isLoggedIn) {
-  <p>Welcome, {{ username }}</p>
-} @else {
-  <p>Log In</p>
-}
-</section>
+  @if (isLoggedIn) {
+    <p>Welcome, {{ username }}</p>
+  } @else {
+    <p>Log In</p>
+  }
 
+  <app-games></app-games>
+</section>
