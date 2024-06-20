@@ -1,5 +1,6 @@
 <ul>
-  @for (game of games, track game.id) {
+  <h3>Los juegos favoritos de {{ username }}</h3>
+  @for (game of games; track game.id) {
     <li>{{ game.name }}</li>
   }
 </ul>
