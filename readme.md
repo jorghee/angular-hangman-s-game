@@ -28,12 +28,12 @@ bootstrapApplication(AppComponent, appConfig)
 Como observamos, se importa dos archivos importantes ubicados en `src/app/` que son basicamente la configuración de la `app/` y el componente raiz de nuestra aplicación. 
 
 ## <samp>What is a Component in Angular ?</samp>
-Un componente en Angular es una clase **TypeScript** decorada con el decorador *@Component*, que define los metadatos necesarios para que Angular pueda crear y renderizar el componente. Un componente consta de tres partes principales:
+Un componente en Angular es una clase **TypeScript** decorada con el decorador *@Component*, que define los metadatos necesarios para que Angular pueda crear y renderizar el componente.
 
+| Partes de un componente                                                           |
+|-----------------------------------------------------------------------------------|
 | <samp>Clase TypeScript:</samp> Contiene la lógica y los datos del componente      |
-|-----------------------------------------------------------------------------------|
 | <samp>Plantilla HTML:</samp> Define la estructura y el contenido del componente   |
-|-----------------------------------------------------------------------------------|
 | <samp>Estilos CSS</samp> Aplican estilos especificos al componente                |
 
 Por ejemplo, si accedemos al directorio `src/app/` veremos los dos archivos importados, ahora abrimos el archivo `src/app/app.component.ts` veremos una estructura parecida a la siguiente:
