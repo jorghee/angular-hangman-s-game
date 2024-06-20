@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { UserComponent } from '../user/user.component';
 
 @Component({
@@ -9,8 +9,11 @@ import { UserComponent } from '../user/user.component';
   styleUrl: './games.component.css'
 })
 export class GamesComponent {
-  // Uso del decorador, este component se comporta como hijo
+  // Este component se comporta como hijo
   @Input() username: string = '';
+
+  // Propiedad de tipo EventEmitter
+  @Output() addFavoriteEvent = new EventEmitter<string>();
 
   games = [
     {
@@ -30,4 +33,8 @@ export class GamesComponent {
       name: 'Vice City'
     }
   ]
+
+  fav(gameName: string) {
+    this.addFavoriteEvent.emit(gameName);
+  }
 }
