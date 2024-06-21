@@ -10,8 +10,8 @@ import {GameService} from './game.service';
 })
 export class GameComponent implements OnInit{
   gameStart = false;
-  lives: number = 6;
-  imageActually: string = '';
+  lives: number;
+  imageActually: string;
   imagesHanged = [
     'assets/image7Ahorcado.png',
     'assets/image6Ahorcado.png',
@@ -19,7 +19,7 @@ export class GameComponent implements OnInit{
     'assets/image4Ahorcado.png',
     'assets/image3Ahorcado.png',
     'assets/image2Ahorcado.png',
-    'assets/image1Ahorcado.png',
+    'assets/image1Ahorcado.png'
   ];
   constructor(private gameService: GameService){}
   ngOnInit(){
@@ -29,9 +29,12 @@ export class GameComponent implements OnInit{
     this.gameService.initGame();
     this.updateImage();
   }
-
-
+  onLetterSelected(letter: string){
+    this.gameService.checkLetter(letter);
+    this.lives = this.gameService.getLives();
+    this.updateImage();
+  }
   updateImage(){
-    this.imageActually = this.imagesHanged[this.lives];
+    this.imageActually = this.imagesHanged[this.lives - 1];
   }
 }
