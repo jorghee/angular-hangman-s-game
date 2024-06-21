@@ -1,0 +1,17 @@
+<div class="container">
+    <header class="header">
+      <h1>Ahorcado</h1>
+    </header>
+    <div class="controls">
+      <button (click)="iniciarJuego()">Iniciar Juego</button>
+      <button (click)="reiniciarJuego()">Reiniciar Juego</button>
+    </div>
+    <div *ngIf="gameStart" class="game-content">
+        <img [src]="imageActually" alt="Figura Ahorcado">
+        <app-word />
+        <app-keyword />
+    </div>
+    <div *ngIf="!gameStart" class="start-message">
+      <h2>¿Iniciar Juego?</h2>
+    </div>
+  </div>
