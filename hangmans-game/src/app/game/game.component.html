@@ -1,0 +1,20 @@
+<div>
+  <h1>Juego del Ahorcado</h1>
+  <app-hangman-drawing [lives]="lives"></app-hangman-drawing>
+  <p>{{ displayWord.join(' ') }}</p>
+
+  <div *ngIf="isGameOver()">
+    <p *ngIf="isGameWon()">¡Ganaste!</p>
+    <p *ngIf="!isGameWon()">Perdiste. La palabra era: {{ selectedWord }}</p>
+    <button (click)="startNewGame()">Jugar de nuevo</button>
+  </div>
+
+  <div *ngIf="!isGameOver()">
+    <p>Vidas restantes: {{ lives }}</p>
+    <div>
+      <button *ngFor="let letter of 'abcdefghijklmnopqrstuvwxyz'" (click)="guessLetter(letter)">
+        {{ letter }}
+      </button>
+    </div>
+  </div>
+</div>
