@@ -3,18 +3,25 @@
   <app-hangman-drawing [lives]="lives"></app-hangman-drawing>
   <p>{{ displayWord.join(' ') }}</p>
 
-  <div *ngIf="isGameOver()">
-    <p *ngIf="isGameWon()">¡Ganaste!</p>
-    <p *ngIf="!isGameWon()">Perdiste. La palabra era: {{ selectedWord }}</p>
-    <button (click)="startNewGame()">Jugar de nuevo</button>
-  </div>
-
-  <div *ngIf="!isGameOver()">
-    <p>Vidas restantes: {{ lives }}</p>
+  @if (isGameOver()) {
+    @if (isGameWon()) {
+      <div>
+        <p>¡Ganaste!</p>
+      </div>
+    } @else {
+      <div>
+        <p>Perdiste. La palabra era: {{ selectedWord }}</p>
+        <button (click)="startNewGame()">Jugar de nuevo</button>
+      </div>
+    }
+  } @else {
     <div>
-      <button *ngFor="let letter of 'abcdefghijklmnopqrstuvwxyz'" (click)="guessLetter(letter)">
-        {{ letter }}
-      </button>
+      <p>Vidas restantes: {{ lives }}</p>
+      <div>
+        @for (letter of 'abcdefghijklmnopqrstuvwxyz'; track letter) {
+          <button (click)="guessLetter(letter)">{{ letter }}</button>
+        }
+      </div>
     </div>
-  </div>
+  }
 </div>

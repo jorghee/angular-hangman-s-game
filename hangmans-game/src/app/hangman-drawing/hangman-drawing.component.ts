@@ -1,14 +1,15 @@
 import { Component, Input } from '@angular/core';
+import { GameComponent } from '../game/game.component'
 
 @Component({
   selector: 'app-hangman-drawing',
   standalone: true,
-  imports: [],
+  imports: [GameComponent],
   templateUrl: './hangman-drawing.component.html',
   styleUrl: './hangman-drawing.component.css'
 })
 export class HangmanDrawingComponent {
-  @Input() lives: number;
+  @Input() lives: number = 0;
 
   getDrawingSteps() {
     const steps = [

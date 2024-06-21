@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
+import { HangmanDrawingComponent } from '../hangman-drawing/hangman-drawing.component'
 
 @Component({
   selector: 'app-game',
   standalone: true,
-  imports: [],
+  imports: [HangmanDrawingComponent],
   templateUrl: './game.component.html',
   styleUrl: './game.component.css'
 })
