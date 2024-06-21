@@ -1,10 +1,11 @@
 import { Component, Input } from '@angular/core';
 import { GameComponent } from '../game/game.component'
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-hangman-drawing',
   standalone: true,
-  imports: [GameComponent],
+  imports: [GameComponent, CommonModule],
   templateUrl: './hangman-drawing.component.html',
   styleUrl: './hangman-drawing.component.css'
 })
