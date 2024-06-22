@@ -1,0 +1,18 @@
+/* You can add global styles to this file, and also import other style files */
+* {  
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    min-height: 100vh;
+    background: linear-gradient(to bottom, rgb(50, 50, 50), #8c8c8c); /* Gradiente de negro a plomo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: 'Chalkboard', sans-serif; /* O cualquier fuente que se asemeje a la tiza */
+    text-shadow: 15px 12px 24px rgba(0, 0, 0, 0.7); /* Simula el efecto de tiza */
+}
+      
+  

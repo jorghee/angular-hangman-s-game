@@ -1,0 +1,28 @@
+<div class="hangman-game">
+  <h1 class="hangman-title">Juego del Ahorcado</h1>
+  <app-hangman-drawing [lives]="lives" class="hangman-drawing"> </app-hangman-drawing>
+  <p class="display-word">{{ displayWord.join(' ') }}</p>
+
+  @if (isGameOver()) {
+    @if (isGameWon()) {
+      <div class="game-result">
+        <p class="win-message">¡Ganaste!</p>
+      </div>
+    } @else {
+      <div class="game-result">
+        <p class="lose-message">Perdiste</p>
+        <p class="word-lose">La palabra era: {{ selectedWord }}</p>
+        <button (click)="startNewGame()" class="new-game-button">Jugar de nuevo</button>
+      </div>
+    }
+  } @else {
+    <div class="game-status">
+      <p class="lives-remaining">Vidas restantes: {{ lives }}</p>
+      <div class="letter-buttons">
+        @for (letter of 'abcdefghijklmnopqrstuvwxyz'; track letter) {
+          <button (click)="guessLetter(letter)" class="letter-button">{{ letter }}</button>
+        }
+      </div>
+    </div>
+  }
+</div>

@@ -1,0 +1,5 @@
+<div class="hangman">
+  @for (step of getDrawingSteps(); track step) {
+    <div [ngClass]="step"></div>
+  }
+</div>

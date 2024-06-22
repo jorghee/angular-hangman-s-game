@@ -1,0 +1,105 @@
+.hangman-game {
+    text-align: center;
+    padding: 40px;
+    border-radius: 10px;
+    border: 4px solid;
+    width: 90vh;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 60px;
+}
+.hangman-title{
+    margin-bottom: 35px;
+    font-weight: bold;
+    text-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+    font-size: 3em;
+}
+.hangman-drawing{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: inline-block;
+    border-radius: 5px; 
+    box-shadow: 0 0 20px rgba(254, 254, 254, 0.5); 
+    background:white;
+}
+.display-word{
+    padding: 15px;
+    font-size: 2em;
+    margin-bottom: 3vh;
+}
+.game-result{
+    display: inline-block;
+    padding: 15px;
+    font-size: 1.5em;
+    text-align: center;
+    background: rgb(19, 19, 19);
+    border-radius: 20px;
+}
+.win-message{
+    padding: 5px;
+    box-shadow: 0 0 10px rgba(124, 124, 124, 0.5);
+    border-radius: 5px;
+}
+.lose-message{
+    display: inline-block;
+    padding: 10px;
+    box-shadow: 0 0 25px rgba(124, 124, 124, 0.5);
+    border-radius: 25px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.word-lose{
+    padding: 5px;
+}
+.new-game-button{
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 1em;
+    background: white;
+    padding: 10px;
+    box-shadow: 0 0 25px rgba(124, 124, 124, 0.5);
+    border-radius: 25px;
+    border: transparent;
+}
+.new-game-button:hover{
+    background-color: black;
+    color: white;
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.5);
+    transition: 0.5s;
+}
+.game-status{
+    border: 2px solid;
+    display: inline-block;
+    padding: 25px;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.984);
+    border-radius: 15px;
+    width: 80%;
+}
+.lives-remaining{
+    font-size: 1.8em;
+    padding: 10px;
+    margin-bottom: 15px;
+    display: inline-block;
+    font-weight: bold;
+}
+.letter-buttons{
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.984);
+    padding: 15px;
+    border-radius: 15px;
+}
+.letter-button{
+    padding: 10px;
+    font-size: 1.5em;
+    margin: 2px;
+    border-radius: 25%;
+    background: white;
+    border: transparent;
+}
+.letter-button:hover{
+    transform: scale(1.4);
+    background: black;
+    color: white;
+    box-shadow: 0px 0px 15px rgb(255, 255, 255);
+}
