@@ -185,28 +185,30 @@ Para ello vamos a utilizar la funcionalidad potente de Angular. Primeramente pod
 Sin embargo aqui es \textbf{importante que este nuevo componente hijo deba recibir la cantidad de vida restante}. Por ello es que estamos obligados a utilizar el concepto de \textbf{Paso de información de hijo a padre y viceversa}.
 
 \begin{minted}[bgcolor=background]{typescript}
-<div>
-  <h1>Juego del Ahorcado</h1>
-  <app-hangman-drawing [lives]="lives"></app-hangman-drawing>
-  <p>{{ displayWord.join(' ') }}</p>
+<div class="hangman-game">
+  <h1 class="hangman-title">Juego del Ahorcado</h1>
+  <app-hangman-drawing [lives]="lives" class="hangman-drawing"> </app-hangman-drawing>
+  <p class="display-word">{{ displayWord.join(' ') }}</p>
 
   @if (isGameOver()) {
     @if (isGameWon()) {
-      <div>
-        <p>¡Ganaste!</p>
+      <div class="game-result">
+        <p class="win-message">¡Ganaste!</p>
+        <button (click)="startNewGame()" class="new-game-button">Jugar de nuevo</button>
       </div>
     } @else {
-      <div>
-        <p>Perdiste. La palabra era: {{ selectedWord }}</p>
-        <button (click)="startNewGame()">Jugar de nuevo</button>
+      <div class="game-result">
+        <p class="lose-message">Perdiste</p>
+        <p class="word-lose">La palabra era: {{ selectedWord }}</p>
+        <button (click)="startNewGame()" class="new-game-button">Jugar de nuevo</button>
       </div>
     }
   } @else {
-    <div>
-      <p>Vidas restantes: {{ lives }}</p>
-      <div>
+    <div class="game-status">
+      <p class="lives-remaining">Vidas restantes: {{ lives }}</p>
+      <div class="letter-buttons">
         @for (letter of 'abcdefghijklmnopqrstuvwxyz'; track letter) {
-          <button (click)="guessLetter(letter)">{{ letter }}</button>
+          <button (click)="guessLetter(letter)" class="letter-button">{{ letter }}</button>
         }
       </div>
     </div>
@@ -273,6 +275,11 @@ Esta es la lógica del juego del ahorcado, hemos visto cómo es que simplifica l
 
 Nos dirigimos a nuestro navegador e ingresamos la URL. Luego podemos jugar el juego cuantas veces querramos.
 
-% Agregar una captura
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth]{img/juego_ahorcado.png}
+  \caption{Juego del Ahorcado}
+\end{figure}
+
 
 \end{document}
